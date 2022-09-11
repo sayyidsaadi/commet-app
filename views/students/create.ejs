@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row justify-content-center my-3">
+        <div class="col-lg-6">
+            <a href="/" class="btn btn-sm btn-dark"> <i class="fa-solid fa-house"></i> </a>
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>Create Students</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/create" method="POST" enctype="multipart/form-data">
+                        <div class="my-3">
+                            <label for="">Name</label>
+                            <input type="text" name="name" class="form-control">
+                        </div>
+                        <div class="my-3">
+                            <label for="">Cell</label>
+                            <input type="text" name="cell" class="form-control">
+                        </div>
+                        <div class="my-3">
+                            <label for="">Email</label>
+                            <input type="text" name="email" class="form-control">
+                        </div>
+                        <div class="my-3">
+                            <label for="">Location</label>
+                            <select name="location" id="" class="form-control">
+                                <option value="sunamganj">Sunamganj</option>
+                                <option value="sylhet">Sylhet</option>
+                                <option value="dhaka">Dhaka</option>
+                                <option value="comilla">Comilla</option>
+                            </select>
+                        </div>
+                        <div class="my-3 profile_img">
+                            <img class="img_preview text-center" src="" alt=""> <br>
+                            <label for="">Profile Photo</label><br>
+                            <label for="up_file">
+                                <img class="st_preview" src="https://cdn-widget-assets.yotpo.com/static_assets/eAOW2B-aFftuc39Gok4mkA/images/image_2021_06_14_10_46_31_456" alt="">
+                            </label>
+                            <input name="student_photo" type="file" id="up_file">
+                        </div>
+                        <div class="my-3 text-center">
+                            <button class="btn btn-success w-100">Create</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

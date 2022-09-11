@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students App</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <!-- <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.css"/>
+ 
+    
+    <!-- CSS only -->
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg_img">
+    
+    
+    
+    <%- body %> 
+    
+    
+    <script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
+    <!-- <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $('.sadi-table').dataTable()
+
+        // Data Table
+
+        let up_file = document.getElementById('up_file');
+        let st_preview = document.querySelector('.st_preview');
+
+        if(up_file){
+
+            up_file.onchange =(e)=>{
+            let img_link = URL.createObjectURL(e.target.files[0]);
+            st_preview.setAttribute('src', img_link)
+            st_preview.style.width='150px';
+            st_preview.style.height = '150px'
+          
+        }
+
+        }
+        
+
+
+        // Delete Item
+        const delete_btn = document.querySelectorAll('.delete-btn')
+
+        if(delete_btn){
+            
+            delete_btn.forEach(item =>{
+
+            item.onclick = (e)=>{
+
+                const conf = confirm('Are You Sure..?')
+                if(conf){
+
+                    return true;
+
+                }else{
+
+                    return false
+
+                }
+            }
+            })
+        }
+        
+
+    </script>
+
+</body>
+</html>

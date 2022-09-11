@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row justify-content-center my-3">
+        <div class="col-lg-10">
+            <div class="card shadow">
+                <div class="card-header text-center">
+                    <h2>All Students</h2>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped sadi-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Photo</th>
+                                <th>Cell</th>
+                                <th>Email</th>
+                                <th>Location</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="align-middle my-2">
+                            <% allStudentsData.reverse().forEach((student_data, index) => { %>
+                                <tr>
+                                    <td><%= index +1 %> </td>
+                                    <td><%= student_data.name %></td>
+                                    <td>
+                                        <% if (student_data.photo == 'avatar.jpeg') { %>
+
+                                            <img src="/images/<%= student_data.photo %>" alt="">
+
+                                            <% } else { %>
+                                             
+                                                <img src="/images/students/<%= student_data.photo %>" alt="">
+                                        <% } %>
+                                    </td>
+                                    <td><%= student_data.cell %></td>
+                                    <td><%= student_data.email %></td>
+                                    <td><%= student_data.location %></td>
+                                    <td>
+                                        <a class="btn btn-sm btn-info" href="/<%= student_data.id %> "><i class="fa-solid fa-eye"></i></a>
+                                        <a class="btn btn-sm btn-warning" href="/edit/<%= student_data.id %> "><i class="fa-solid fa-pen"></i></a>
+                                        <a class="btn btn-sm btn-danger delete-btn" href="/delete/<%= student_data.id %> "><i class="fa-solid fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/create" class="btn btn-success w-25"> <i class="fa-solid fa-user-plus"></i>  Add New Student</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

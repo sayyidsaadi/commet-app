@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row justify-content-center my-3">
+        <div class="col-lg-6">
+            <a href="/" class="btn btn-sm btn-dark"> <i class="fa-solid fa-house"></i> </a>
+            <div class="card shadow">
+                <div class="card-header text-center">
+                    <h4>Update<%= edit_data.name %>Students Data</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/update/<%= edit_data.id %>" method="POST" enctype="multipart/form-data">
+                        <div class="my-3">
+                            <label for="">Name</label>
+                            <input type="text" value="<%= edit_data.name %>" name="name" class="form-control">
+                        </div>
+                        <div class="my-3">
+                            <label for="">Mobile Number</label>
+                            <input type="text" value="<%= edit_data.cell %>" name="cell" class="form-control">
+                        </div>
+                        <div class="my-3">
+                            <label for="">Email</label>
+                            <input type="text" value="<%= edit_data.email %>" name="email" class="form-control">
+                        </div>
+                        <div class="my-3">
+                            
+                             
+                           
+                            <label for="">Location</label>
+                            <select name="location" class="form-control mt-2">
+                                <option value="">-Select-</option>
+                                <option <% if (edit_data.location == "Dhaka") { %> selected <% } %> value="Dhaka">Dhaka</option>
+                                <option <% if (edit_data.location == "Sylhet") { %> selected <% } %> value="Sylhet">Sylhet</option>
+                                <option <% if (edit_data.location == "Chittagong") { %> selected <% } %> value="Chittagong">Chittagong</option>
+                                <option <% if (edit_data.location == "Barishal") { %> selected <% } %> value="Barishal">Barishal</option>
+                                <option <% if (edit_data.location == "Khulna") { %> selected <% } %> value="Khulna">Khulna</option>
+                                <option <% if (edit_data.location == "Mymensingh") { %> selected <% } %> value="Mymensingh">Mymensingh</option>
+                                <option <% if (edit_data.location == "Rajshahi") { %> selected <% } %> value="Rajshahi">Rajshahi</option>
+                                <option <% if (edit_data.location == "Rangpur") { %> selected <% } %> value="Rangpur">Rangpur</option>
+                            </select>
+
+                        </div>
+                        <div class="my-3 profile_img">
+                            <img class="img_preview text-center" src="" alt=""> <br>
+                            <label for="">Profile Photo</label><br>
+                            <label for="up_file">
+                                <img class="st_preview" src="/images/students/<%= edit_data.photo %>" alt="">
+                            </label>
+                            <input name="student_photo" type="file" id="up_file">
+                        </div>
+                        <div class="my-3 text-center">
+                            <button class="btn btn-success w-100">Update Data</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+.bg_img{
+    font-family: 'Poppins', sans-serif;
+    /* background-image: url('../images/sadi.JPG');
+   background-size: cover;
+   position: relative; */
+    
+}
+
+.sadi-table{
+    text-align: center;
+    vertical-align: middle;
+}
+.sadi-table img{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+form label img {
+    width: 101px;
+    height: 100px;
+    cursor: pointer;
+    margin-left: 200px;
+}
+
+form input[type="file"]{
+    display: none;
+}
+.img_preview{
+    max-width: 50%;
+}
+
+.single-info{
+    text-align: center;
+}
+.single-info img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 30px auto;
+}
+
